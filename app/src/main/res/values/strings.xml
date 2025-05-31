@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">SaludApp</string>
+    <string name="app_name">Medicamentos</string>
+    <string-array name="tipos_medicamento">
+        <item>Pastilla</item>
+        <item>Jarabe</item>
+        <item>Ampolla</item>
+        <item>Cápsula</item>
+    </string-array>
 </resources>
