@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.saludapp.Helpers.NotificacionHelper;
 import com.example.saludapp.R;
 
 import java.io.File;
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        NotificacionHelper.createNotificationChannels(this);
 
         prefs = getSharedPreferences("PreferenciasUsuario", MODE_PRIVATE);
 

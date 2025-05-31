@@ -3,11 +3,13 @@ package com.example.saludapp.Activities;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.work.PeriodicWorkRequest;
 import androidx.work.WorkManager;
 
@@ -25,6 +27,14 @@ public class ConfiguracionesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.config_activity);
 
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Configuración");
+
+// Mostrar el botón de "atrás"
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
         // Referencias UI
         etNombre = findViewById(R.id.etNombreUsuario);
         etMensaje = findViewById(R.id.etMensajeMotivacional);
@@ -82,5 +92,13 @@ public class ConfiguracionesActivity extends AppCompatActivity {
                 .build();
 
         workManager.enqueue(trabajo);
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            finish();  // Cierra esta actividad y vuelve a la anterior
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

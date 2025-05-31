@@ -1,42 +1,67 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fitsSystemWindows="true"
     android:id="@+id/layoutPrincipal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp">
 
-    <TextView
-        android:id="@+id/textSaludo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="¡Hola, Usuario!"
-        android:textSize="22sp" />
-
-    <TextView
-        android:id="@+id/textMotivacion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="¡Tú puedes!"
-        android:layout_marginBottom="8dp"/>
-
+    <!-- Imagen centrada arriba -->
     <ImageView
         android:id="@+id/imagenUsuario"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
         android:src="@drawable/farm_image"
-        android:layout_gravity="center"
+        android:layout_gravity="center_horizontal"
         android:contentDescription="Imagen de usuario"
-        android:layout_marginBottom="12dp"/>
+        android:layout_marginBottom="24dp" />
 
-    <Button
-        android:id="@+id/btnVerMedicamentos"
+    <!-- Contenedor para los textos, centrados y con margen arriba para separarlos de la imagen -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ver mis medicamentos" />
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="24dp">
+
+        <TextView
+            android:id="@+id/textSaludo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="¡Hola, Usuario!"
+            android:textSize="22sp"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/textMotivacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="¡Tú puedes!"
+            android:textSize="18sp"
+            android:layout_marginTop="8dp"
+            android:textColor="#444444" />
+    </LinearLayout>
+
+    <!-- Botones centrados y con separación -->
+    <Button
+        android:id="@+id/btnVerMedicamentos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ver mis medicamentos"
+        android:layout_gravity="center_horizontal"
+        android:minWidth="200dp"
+        android:backgroundTint="#009688"
+        android:layout_marginBottom="16dp"/>
 
     <Button
         android:id="@+id/btnConfiguraciones"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Configuraciones" />
+        android:text="Configuraciones"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#000000"
+        android:layout_gravity="center_horizontal"
+        android:minWidth="200dp"/>
 </LinearLayout>

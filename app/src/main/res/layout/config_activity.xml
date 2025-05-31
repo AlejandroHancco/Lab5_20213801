@@ -1,20 +1,53 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:padding="16dp"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <EditText android:id="@+id/etNombreUsuario"
-        android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:hint="Nombre del usuario" />
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#009688"
+        android:title="Configuración"
+        android:titleTextColor="@android:color/white" />
 
-    <EditText android:id="@+id/etMensajeMotivacional"
-        android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:hint="Mensaje motivacional" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <EditText android:id="@+id/etIntervaloMotivacion"
-        android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:hint="Intervalo (horas)" android:inputType="number"/>
+        <EditText
+            android:id="@+id/etNombreUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre del usuario"
+            android:layout_marginTop="16dp"/>
 
-    <Button android:id="@+id/btnGuardarConfiguracion"
-        android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:text="Guardar" />
+        <EditText
+            android:id="@+id/etMensajeMotivacional"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Mensaje motivacional"
+            android:layout_marginTop="12dp"/>
+
+        <EditText
+            android:id="@+id/etIntervaloMotivacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Intervalo (horas)"
+            android:inputType="number"
+            android:layout_marginTop="12dp"/>
+
+        <Button
+            android:id="@+id/btnGuardarConfiguracion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Guardar"
+            android:backgroundTint="#009688"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="24dp"/>
+    </LinearLayout>
+
 </LinearLayout>
